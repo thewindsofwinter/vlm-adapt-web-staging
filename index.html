@@ -70,7 +70,7 @@
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video</span>
+                  <span>Video (TBD)</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -101,79 +101,9 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
+<!-- There used to be a teaser here -->
 
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- There used to be a carousel here -->
 
 
 <section class="section">
@@ -182,33 +112,19 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
+        <br/>
         <div class="content has-text-justified">
+          <!-- Visual abstract -->
+          <img src="./static/images/teaser2.png">
+
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Legged robots have the potential to handle a particularly wide range of situations, and we desire them to be deployed successfully in complex tasks such as search and rescue missions, which may require climbing over debris, crawling through gaps, and navigating out of dead ends without a map. 
+            However, effectively handling this long tail of real-world situations without the need for heavy human supervision and guidance remains an open challenge. 
+            To this end, we investigate how to leverage the broad knowledge about the structure of the world and commonsense reasoning capabilities of vision-language models (VLMs), which are trained extensively on Internet data, to aid in these challenging real-world situations. 
+            Our approach, VLM-Predictive Control (VLM-PC), maps common skills for legged locomotion to language and investigates how VLMs can be incorporated effectively as a high-level planner.
+            We combine two crucial components to enable on-the-fly adaptive behavior with VLMs: 
+            (1) in-context adaptation over previous robot interactions, and (2) planning multiple skills into the future and replanning.
+            We evaluate VLM-PC on several challenging real-world obstacle courses, involving dead ends and climbing and crawling, on a Go1 quadruped robot. Our results show that by using in-context learning and future planning, VLMs enable the robot to autonomously perceive, navigate, and act in a new breadth of complex, partially observed scenarios not tackled by prior work without human guidance.
           </p>
         </div>
       </div>
@@ -216,156 +132,283 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
     <!--/ Paper video. -->
   </div>
 </section>
 
 
+<!-- Videos -->    
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Videos</h2>
+    <p>VLM-PC allows our robot to reason through complex obstacles, even with a limited set of 
+      discrete choices of action-magnitude pair. Further, by incorporating history 
+      and planning in VLM queries, our method is able to mitigate potential sticking points in a 
+      partially-observed setting relative to when either measure is ablated. Note that after breaking all 
+      USB ports on the robot, a laptop was needed as a WiFi endpoint to connect the robot to VLM APIs: these 
+      videos will be redone once the robot is repaired.
+    </p>
+    <br/>
 
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
+    <table>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">     
+          <div style="display:flex; min-width:200px; align-items:center; height:100%;">   
+            <h3 class="title is-4">Narrow Gap</h3>
           </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_small_gap_cornertrap.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>If we ablate history from VLM-PC, the robot often gets stuck in a corner attempting to pass through gaps big enough for the camera
+                to fit through but too small for the robot body.
+              </p>
+              </div>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_small_gap_succeed.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>The full VLM-PC method retries moving in different directions after historical attempts make no progress.</p>
+              </div>
+            </div>
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">       
+          <div style="display:flex; min-width:200px; align-items:center; height:100%;"> 
+            <h3 class="title is-4">Bamboo</h3>
           </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/bamboo_no_plan_walk_off.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>While its history component prevents the robot from getting stuck on the bamboo, ablating planning from 
+                VLM-PC results in the robot forgetting to turn back to find the red chew toy, instead walking off the scene.
+              </p>
+              </div>
+            </div>
+            <div class="column is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/bamboo_plan_long_way_around.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>The full VLM-PC method allows the robot to plan to turn back towards its original target, even 
+                in this difficult case where it initially, due to the partially-observed setting, chooses a longer
+                path leading away from its end goal.
+              </p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">
+          <div style="display:flex; min-width:200px; align-items:center; height:100%;">
+            <h3 class="title is-4">Blocked Couch</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>If we ablate history, the robot continually tries to go under the couch, not realizing there is no clear path beyond it that a robot can fit through.</p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_hard_corner_back_succeed.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>With VLM-PC, the robot is able to try different actions based on the given scenario until it escapes the corner.</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">
+          <div style="display:flex; min-width:200px; align-items:center; height:100%;">        
+            <h3 class="title is-4">Bush</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>[Something about failure mode when planning is ablated, I don't actually know how it fails]</p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_bush_succeed.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>With VLM-PC, the robot is able to effectively and efficiently navigate to its objective.</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">    
+          <div style="display:flex; min-width:200px; align-items:center; height:100%;">    
+            <h3 class="title is-4">Unstable Step</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>Due to the length of the incline and step, the robot can get caught in the middle of climbing 
+                the unstable step. As the robot head is above the step, the robot can get stuck climbing the step.
+              </p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>Using VLM-PC, the robot can sometimes avoid this failure case [and re-climb the step after reorienting itself]
+                or [and navigate around the obstacle in a separate strategy]. Choose one based on what video we get.
+              </p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">In-Context Examples</h2>
+    <p>After gathering more VLM-PC data, we tried prompting the robot with in-context examples of actions to take 
+      in certain scenarios. In some cases, this helped our robot navigate more effectively around obstacles, although 
+      in other cases the robot would choose actions poorly despite the examples. [Potential rationalization: we hypothesize 
+      that due to the complexity of navigating these settings, the robot may end up in different positions and camera views.
+      This drift from in-context examples (comparable to trajectory drift in behavior cloning) might make ICL less effective
+      in certain settings.]
+    </p>
+    <br/>
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_success.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>The robot successfully climbs the shaky step, avoiding even knocking against the step due to the in-context 
+          recommendations which we curated from just a few [note: exactly how many?] camera angles.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>Maybe another example from Bamboo ICL?
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>Maybe another example where the robot gets stuck in corner? Might actually put a video from setting 2
+          to show that ICL with examples from a different dataset degrades performance.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Failures</h2>
+    <p style="text-align: center;">VLM-PC sometimes fails even with planning and history, though enhancements of our basic method may improve its effectiveness.
+    </p>
+    <br/>
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_deviation.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>On the shaky step, sometimes moving forward and backing up on the loose soil of the incline results in robot heading drift.
+          As VLM-PC currently uses no proprioceptive data, the robot does not know to reorient 
+          towards the objective. Note that in settings such as Bamboo where turns occur only when commanded, the 
+          robot can reorient towards an objective after going around an obstacle.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_hard_corner_back_fail.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>On the corner setting, sometimes the robot has difficulty navigating out of the corner due to lack of
+          precise actions, as in our method we only provide actions at three common-language magnitudes (small, 
+          medium, large) rather than specific degree measurements or intended distances.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_fall.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>On the shaky step, the inherent instability of the step may result in a robot fall, especially if the
+          robot ends up straddling the right edge of the step.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Methods -->    
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Methods</h2>
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <img src="./static/images/method2.png">
+        <br/>
+        <p>Our method, VLM-PC, allows the robot to choose skills which it 
+          believes are best-suited for the given scenario. At each timestep, the
+          VLM (generally, GPT-4o) is prompted with an image sampled from a 
+          camera on the robot head and asked to output an action from the set 
+          Walk/Climb/Crawl/Left/Right and a natural-language action magnitude from 
+          Small/Medium/Large. This output can then be fed into a low-level action 
+          policy: for simplicity, we used Unitree's default controller with each 
+          skill commanding specific robot gait, velocity, and body height. More 
+          details on this can be found in the paper.
+        </p>
+        <br/>
+        <p>To help our policy adapt to unseen or partially-observed circumstances,
+          we leverage history and planning. During each query, the VLM also receives
+          the history of past camera images, so that if the robot is not making 
+          progress it can try other actions or get itself unstuck. Further, the prompt 
+          instructs the VLM to output a multi-step plan of which the selected action is 
+          the first action at each timestep. Therefore, the model can compare its plan 
+          to previous plans to keep in mind its long-term goals.
+        </p>
+        <br/>
+        <p>We compare our method to the following ablations and extensions:</p>
+        <br/>
+        <ul style="list-style-type: disc; margin-left: 24px;">
+          <li>Random Action Baseline: Takes random (small) actions.</li>
+          <li>History Ablation: VLM-PC with planning, but with no history input.</li>
+          <li>Planning Ablation: VLM-PC with full history, but no plan generation.</li>
+          <li>ICL Extension: VLM-PC, but in-context images labeled with correct actions 
+            are given before the first action.
+          </li>
+        </ul>
+        <br/>
+        <p>For detailed results, see our paper.</p>
+      </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
