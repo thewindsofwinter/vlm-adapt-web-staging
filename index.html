@@ -299,6 +299,14 @@
     <br/>
     <div class="columns is-centered">
       <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/low_angle_smallgap_win.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>In Small Gap, our most deterministic setting (only one way to get around each obstacle), adding 3 ICL examples immediately
+          leads to highly-efficient accomplishment of the goal.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
         <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_success.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
         <div class="content is-two-third has-text-centered">
         <p>The robot successfully climbs the shaky step, avoiding even knocking against the step due to the in-context 
@@ -306,18 +314,23 @@
         </p>
         </div>
       </div>
+    </div>
+    <div class="columns is-centered">
       <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
         <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
         <div class="content is-two-third has-text-centered">
-        <p>Maybe another example from Bamboo ICL?
+        <p>In Bamboo, ICL performs much worse than the normal VLM-PC method, [speculation: possibly because of the 
+          large changes that can occur in camera view from just small movements due to the many bamboo shoots in front 
+          of the robot].
         </p>
         </div>
       </div>
       <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
-        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/todo.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/low_angle_smallgap_ood.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
         <div class="content is-two-third has-text-centered">
-        <p>Maybe another example where the robot gets stuck in corner? Might actually put a video from setting 2
-          to show that ICL with examples from a different dataset degrades performance.
+        <p>When ICL examples from our other indoor setting, the Blocked Couch, are used on Small Gap,
+          the robot gets confused and oscillates between turning, running or crawling into obstacles, and backing up.
+          This suggests ICL examples might best be curated for each individual setting. 
         </p>
         </div>
       </div>
