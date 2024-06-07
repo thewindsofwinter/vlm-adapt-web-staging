@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VLMs can be effectively incorporated as a high-level planner to tackle complex, partially-observed scenarios.">
+  <meta name="keywords" content="vision-language models, on-the-fly adaptation, in-context learning, locomotion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In-Context Adaptation for Legged Robots with Vision-Language Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- There used to be a navbar here-->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">In-Context Adaptation for Legged Robots with Vision-Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Author(s)</span>
+          </div>
+
+          <!-- There used to be affiliations here -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (TBD)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (TBD)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (TBD)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (TBD)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data (TBD)</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- There used to be a teaser here -->
+
+<!-- There used to be a carousel here -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <br/>
+        <div class="content has-text-justified">
+          <!-- Visual abstract -->
+          <img src="./static/images/teaser2.png">
+
+          <p>
+            Legged robots have the potential to handle a particularly wide range of situations, and we desire them to be deployed successfully in complex tasks such as search and rescue missions, which may require climbing over debris, crawling through gaps, and navigating out of dead ends without a map. 
+            However, effectively handling this long tail of real-world situations without the need for heavy human supervision and guidance remains an open challenge. 
+            To this end, we investigate how to leverage the broad knowledge about the structure of the world and commonsense reasoning capabilities of vision-language models (VLMs), which are trained extensively on Internet data, to aid in these challenging real-world situations. 
+            Our approach, VLM-Predictive Control (VLM-PC), maps common skills for legged locomotion to language and investigates how VLMs can be incorporated effectively as a high-level planner.
+            We combine two crucial components to enable on-the-fly adaptive behavior with VLMs: 
+            (1) in-context adaptation over previous robot interactions, and (2) planning multiple skills into the future and replanning.
+            We evaluate VLM-PC on several challenging real-world obstacle courses, involving dead ends and climbing and crawling, on a Go1 quadruped robot. Our results show that by using in-context learning and future planning, VLMs enable the robot to autonomously perceive, navigate, and act in a new breadth of complex, partially observed scenarios not tackled by prior work without human guidance.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!-- Videos -->    
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Videos</h2>
+    <p>VLM-PC allows our robot to reason through complex obstacles, even with a limited set of 
+      discrete choices of action-magnitude pair. Further, by incorporating history 
+      and planning in VLM queries, our method is able to mitigate potential sticking points in a 
+      partially-observed setting relative to when either measure is ablated. Note that after breaking all 
+      USB ports on the robot, a laptop was needed as a WiFi endpoint to connect the robot to VLM APIs: these 
+      videos will be redone once the robot is repaired.
+    </p>
+    <br/>
+
+    <table>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">     
+          <div style="min-width:200px; padding-top:8px;">   
+            <h3 class="title is-4">Narrow Gap</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_small_gap_cornertrap.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>If we ablate history from VLM-PC, the robot often gets stuck in a corner attempting to pass through gaps big enough for the camera
+                to fit through but too small for the robot body.
+              </p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_small_gap_succeed.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>The full VLM-PC method retries moving in different directions after historical attempts make no progress.</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">       
+          <div style="min-width:200px; padding-top:8px;"> 
+            <h3 class="title is-4">Bamboo</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/bamboo_no_plan_walk_off.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>While its history component prevents the robot from getting stuck on the bamboo, ablating planning from 
+                VLM-PC results in the robot forgetting to turn back to find the red chew toy, instead walking off the scene.
+              </p>
+              </div>
+            </div>
+            <div class="column is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/bamboo_plan_long_way_around.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>The full VLM-PC method allows the robot to plan to turn back towards its original target, even 
+                in this difficult case where it initially, due to the partially-observed setting, chooses a longer
+                path leading away from its end goal.
+              </p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">
+          <div style="min-width:200px; padding-top:8px;">
+            <h3 class="title is-4">Blocked Couch</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/no_history_couch.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>If we ablate history, the robot continually tries to go under the couch, not realizing there is no clear path 
+                beyond it that a robot can fit through. Even when it makes a lucky left turn, it can't realize that it's 
+                stuck on a couch left thereafter.</p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_hard_corner_back_succeed.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>With VLM-PC, the robot is able to try different actions based on the given scenario until it escapes the corner.</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">
+          <div style="min-width:200px; padding-top:8px;">        
+            <h3 class="title is-4">Bush</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/no_plan_5.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>In the planning ablation, we see the robot has difficulty orienting itself correctly towards the chew toy, often 
+                overshooting the target and not correcting itself.
+              </p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_bush_succeed.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>With VLM-PC, the robot is able to effectively and efficiently navigate to its objective.</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- atrocious hack-->
+      <tr style="height:1px;">
+        <td style="height:inherit;">    
+          <div style="min-width:200px; padding-top:8px;">    
+            <h3 class="title is-4">Unstable Step</h3>
+          </div>
+        </td>
+        <td>
+          <div class="columns is-centered">
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/step_no_history_fail.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>Due to the length of the incline and step, the robot can get caught in the middle of climbing 
+                the unstable step. As the robot head is above the step, the robot can get stuck climbing the step.
+              </p>
+              </div>
+            </div>
+            <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+              <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/suboptimal_retry_plan.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+              <div class="content is-two-third has-text-centered">
+              <p>Using VLM-PC, even though the shaky step leads to the robot view changing even when no progress is made,
+                the robot learns to re-climb the step after reorienting itself.
+                Note: do we have better videos than this one?
+              </p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">In-Context Examples</h2>
+    <p>After gathering more VLM-PC data, we tried prompting the robot with in-context examples of actions to take 
+      in certain scenarios. In some cases, this helped our robot navigate more effectively around obstacles, although 
+      in other cases the robot would choose actions poorly despite the examples. [Potential rationalization: we hypothesize 
+      that due to the complexity of navigating these settings, the robot may end up in different positions and camera views.
+      This drift from in-context examples (comparable to trajectory drift in behavior cloning) might make ICL less effective
+      in certain settings.]
+    </p>
+    <br/>
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/low_angle_smallgap_win.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>In Small Gap, our most deterministic setting (only one way to get around each obstacle), adding 3 ICL examples immediately
+          leads to highly-efficient accomplishment of the goal.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_success.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>The robot successfully climbs the shaky step, avoiding even knocking against the step due to the in-context 
+          recommendations which we curated from just a few [note: exactly how many?] camera angles.
+        </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/bamboo_icl_fail.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>In Bamboo, ICL performs much worse than the normal VLM-PC method, [speculation: possibly because of the 
+          large changes that can occur in camera view from just small movements due to the many bamboo shoots in front 
+          of the robot].
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/low_angle_smallgap_ood.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>When ICL examples from our other indoor setting, the Blocked Couch, are used on Small Gap,
+          the robot gets confused and oscillates between turning, running or crawling into obstacles, and backing up.
+          This suggests ICL examples might best be curated for each individual setting. 
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Failures</h2>
+    <p style="text-align: center;">VLM-PC sometimes fails even with planning and history, though enhancements of our basic method may improve its effectiveness.
+    </p>
+    <br/>
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_deviation.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>On the shaky step, sometimes moving forward and backing up on the loose soil of the incline results in robot heading drift.
+          As VLM-PC currently uses no proprioceptive data, the robot does not know to reorient 
+          towards the objective. Note that in settings such as Bamboo where turns occur only when commanded, the 
+          robot can reorient towards an objective after going around an obstacle.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/robot_hard_corner_back_fail.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>On the corner setting, sometimes the robot has difficulty navigating out of the corner due to lack of
+          precise actions, as in our method we only provide actions at three common-language magnitudes (small, 
+          medium, large) rather than specific degree measurements or intended distances.
+        </p>
+        </div>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_fall.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <div class="content is-two-third has-text-centered">
+        <p>On the shaky step, the inherent instability of the step may result in a robot fall, especially if the
+          robot ends up straddling the right edge of the step.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Methods -->    
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Methods</h2>
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <img src="./static/images/method2.png">
+        <br/>
+        <p>Our method, VLM-PC, allows the robot to choose skills which it 
+          believes are best-suited for the given scenario. At each timestep, the
+          VLM (generally, GPT-4o) is prompted with an image sampled from a 
+          camera on the robot head and asked to output an action from the set 
+          Walk/Climb/Crawl/Left/Right and a natural-language action magnitude from 
+          Small/Medium/Large. This output can then be fed into a low-level action 
+          policy: for simplicity, we used Unitree's default controller with each 
+          skill commanding specific robot gait, velocity, and body height. More 
+          details on this can be found in the paper.
+        </p>
+        <br/>
+        <p>To help our policy adapt to unseen or partially-observed circumstances,
+          we leverage history and planning. During each query, the VLM also receives
+          the history of past camera images, so that if the robot is not making 
+          progress it can try other actions or get itself unstuck. Further, the prompt 
+          instructs the VLM to output a multi-step plan of which the selected action is 
+          the first action at each timestep. Therefore, the model can compare its plan 
+          to previous plans to keep in mind its long-term goals.
+        </p>
+        <br/>
+        <p>We compare our method to the following ablations and extensions:</p>
+        <br/>
+        <ul style="list-style-type: disc; margin-left: 24px;">
+          <li>Random Action Baseline: Takes random (small) actions.</li>
+          <li>History Ablation: VLM-PC with planning, but with no history input.</li>
+          <li>Planning Ablation: VLM-PC with full history, but no plan generation.</li>
+          <li>ICL Extension: VLM-PC, but in-context images labeled with correct actions 
+            are given before the first action.
+          </li>
+        </ul>
+        <br/>
+        <p>For detailed results, see our paper.</p>
+      </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{TBD}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> <!-- and <a href="https://robot-parkour.github.io/"><span class="dnerf">Robot Parkour Learning</span></a>. --></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
