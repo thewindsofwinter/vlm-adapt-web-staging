@@ -35,7 +35,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">In-Context Adaptation for Legged Robots with Vision-Language Models</h1>
+          <h1 class="title is-1 publication-title">Commonsense Reasoning for Legged Robot Adaptation with Vision-Language Models</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">Anonymous Author(s)</span>
           </div>
@@ -118,13 +118,26 @@
           <img src="./static/images/teaser6.png">
 
           <p>
-            Legged robots have the potential to handle a particularly wide range of situations, and we desire them to be deployed successfully in complex tasks such as search and rescue missions, which may require climbing over debris, crawling through gaps, and navigating out of dead ends without a map. 
-            However, effectively handling this long tail of real-world situations without the need for heavy human supervision and guidance remains an open challenge. 
-            To this end, we investigate how to leverage the broad knowledge about the structure of the world and commonsense reasoning capabilities of vision-language models (VLMs), which are trained extensively on Internet data, to aid in these challenging real-world situations. 
-            Our approach, VLM-Predictive Control (VLM-PC), maps common skills for legged locomotion to language and investigates how VLMs can be incorporated effectively as a high-level planner.
-            We combine two crucial components to enable on-the-fly adaptive behavior with VLMs: 
-            (1) in-context adaptation over previous robot interactions, and (2) planning multiple skills into the future and replanning.
-            We evaluate VLM-PC on several challenging real-world obstacle courses, involving dead ends and climbing and crawling, on a Go1 quadruped robot. Our results show that by using in-context learning and future planning, VLMs enable the robot to autonomously perceive, navigate, and act in a new breadth of complex, partially observed scenarios not tackled by prior work without human guidance.
+            Legged robots are physically capable of navigating a diverse variety
+of environments and overcoming a wide range of obstructions. For example,
+in a search and rescue mission, a legged robot could climb over debris, crawl
+through gaps, and navigate out of dead ends. However, the robot’s controller
+needs to respond intelligently to such varied obstacles, and this requires handling
+unexpected and unusual scenarios successfully. This presents an open challenge to
+current learning methods, which often struggle with generalization to the long tail
+of unexpected situations without heavy human supervision. To address this issue,
+we investigate how to leverage the broad knowledge about the structure of the world
+and commonsense reasoning capabilities of vision-language models (VLMs) to aid
+legged robots in handling difficult, ambiguous situations. We propose a system,
+VLM-Predictive Control (VLM-PC), combining two key components that we find
+to be crucial for eliciting on-the-fly, adaptive behavior selection with VLMs: (1)
+in-context adaptation over previous robot interactions and (2) planning multiple
+skills into the future and replanning. We evaluate VLM-PC on several challenging
+real-world obstacle courses, involving dead ends and climbing and crawling, on a
+Go1 quadruped robot. Our experiments show that by reasoning over the history of
+interactions and future plans, VLMs enable the robot to autonomously perceive,
+navigate, and act in a wide range of complex scenarios that would otherwise require
+environment-specific engineering or human guidance.
           </p>
         </div>
       </div>
@@ -220,7 +233,7 @@
               <div class="content is-two-third has-text-centered">
               <p>If we ablate history, the robot continually tries to go under the couch, not realizing there is no clear path 
                 beyond it that a robot can fit through. Even when it makes a lucky left turn, it can't realize that it's 
-                stuck on a couch left thereafter.</p>
+                stuck on a couch leg and cannot reorient to succeed at the task.</p>
               </div>
             </div>
             <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
@@ -244,8 +257,9 @@
             <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
               <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/no_plan_5.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
               <div class="content is-two-third has-text-centered">
-              <p>In the planning ablation, we see the robot has difficulty orienting itself correctly towards the chew toy, often 
-                overshooting the target and not correcting itself.
+              <p>In the planning ablation, we see the robot biases on trying many attempts towards the right, 
+                with few attempts on the left, as without planning the robot has less understanding of a broader strategy
+                and why past actions might have failed.
               </p>
               </div>
             </div>
@@ -296,10 +310,8 @@
     <h2 class="title is-2" style="text-align: center;">In-Context Examples</h2>
     <p>After gathering more VLM-PC data, we tried prompting the robot with in-context examples of actions to take 
       in certain scenarios. In some cases, this helped our robot navigate more effectively around obstacles, although 
-      in other cases the robot would choose actions poorly despite the examples. [Potential rationalization: we hypothesize 
-      that due to the complexity of navigating these settings, the robot may end up in different positions and camera views.
-      This drift from in-context examples (comparable to trajectory drift in behavior cloning) might make ICL less effective
-      in certain settings.]
+      in other cases the robot would choose actions poorly despite the examples, likely due to drift from the specific 
+      trajectory that the in-context examples were gathered for. 
     </p>
     <br/>
     <div class="columns is-centered">
@@ -315,7 +327,7 @@
         <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/incline_step_success_anonymized.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
         <div class="content is-two-third has-text-centered">
         <p>The robot successfully climbs the shaky step, avoiding even knocking against the step due to the in-context 
-          recommendations which we curated from just a few [note: exactly how many?] camera angles.
+          recommendations which we curated from just four camera angles.
         </p>
         </div>
       </div>
@@ -324,9 +336,10 @@
       <div class="column is-full-width is-centered has-text-centered"><div class="vsc-controller"></div>
         <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/bamboo_icl_fail.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
         <div class="content is-two-third has-text-centered">
-        <p>In Bamboo, ICL performs much worse than the normal VLM-PC method, [speculation: possibly because of the 
-          large changes that can occur in camera view from just small movements due to the many bamboo shoots in front 
-          of the robot].
+        <p>In Bamboo, ICL performs much worse than the normal VLM-PC method, possibly because large changes in 
+          scene can occur from even small movements due to the many shoots of bamboo. Once the robot drifts 
+          away from its starting thicket, it sees other thickets which confuse it further as the examples are now 
+          harmful to navigating its setting.
         </p>
         </div>
       </div>
@@ -423,6 +436,7 @@
           </li>
         </ul>
         <br/>
+        <img src="./static/images/avg_results2.png">
         <p>For detailed results, see our paper.</p>
       </div>
   </div>
